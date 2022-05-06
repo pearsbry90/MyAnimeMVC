@@ -1,0 +1,34 @@
+﻿@model MyAnimeMVC.AnimeMVC.Models.Rating.RatingCreate
+
+@{
+    string title = "Rate an Anime";
+    ViewData["Title"] = title;
+}
+
+<h1>@title</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="AnimeId" class="control-label"></label>
+                @Html.DropDownListFor(r => r.AnimeId, Model.AnimeOptions)
+                <span asp-validation-for="AnimeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YearCreated" class="control-label"></label>
+                @Html.DropDownListFor(r => r.YearCreated, Model.AnimeOptions)
+                <span asp-validation-for="YearCreated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Score" class="control-label"></label>
+                @Html.DropDownListFor(r => r.Score, Model.AnimeOptions)
+                <span asp-validation-for="Score" class="text-danger"></span>
+            </div>
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>

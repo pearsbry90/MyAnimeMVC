@@ -1,0 +1,59 @@
+﻿@model IEnumerable<MyAnimeMVC.AnimeMVC.Models.Anime.AnimeListItem>
+
+@{
+    ViewData["Title"] = "Anime Index";
+}
+
+<h1>Anime Index</h1>
+<a asp-action="Create">Create Anime</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+             <th>
+                @Html.DisplayNameFor(model => model.YearCreated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GenreId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Score)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td
+                 <th>
+                @Html.DisplayNameFor(model => model.YearCreated)
+            </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GenreId)
+                </td>
+
+                <td>
+                    @if (item.Score > 0)
+                        {
+                            @Html.DisplayFor(modelItem => item.Score)
+                        }
+                    else
+                        {
+                            <span>No Ratings Yet</span>
+                        }
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Anime", new {id = item.Id}) |
+                    @Html.ActionLink("Details", "Details", "Anime", new {id = item.Id}) |
+                    @Html.ActionLink("Delete", "Delete", "Anime", new {id = item.Id})
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

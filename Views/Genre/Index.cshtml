@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MyAnimeMVC.AnimeMVC.Models.Genre.GenreListItem>
+
+@{
+    ViewBag.Title = "GenreListItem";
+}
+
+<h2>GenreListItem</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AnimeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YearCreated)
+        </th>
+        th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnimeId)
+            </td>
+            <td>
+            @Html.DisplayNameFor(model => model.YearCreated)
+            </td>
+            th>
+            @Html.DisplayNameFor(model => model.Name)
+            </th>
+        </tr>
+    }
+</table>
