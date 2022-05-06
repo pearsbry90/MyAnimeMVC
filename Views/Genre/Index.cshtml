@@ -13,7 +13,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.AnimeId)
+            @Html.DisplayNameFor(model => model.AnimeTitle)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.YearCreated)
@@ -24,16 +24,18 @@
     </tr>
     @foreach (var item in Model)
     {
-        <tr>
+    <tr>
+        <th>
             <td>
-                @Html.DisplayFor(modelItem => item.AnimeId)
+                @Html.DisplayFor(modelItem => item.AnimeTitle)
             </td>
             <td>
             @Html.DisplayNameFor(model => model.YearCreated)
             </td>
-            th>
+            <th>
             @Html.DisplayNameFor(model => model.Name)
             </th>
-        </tr>
+        </th>
+    </tr>
     }
 </table>

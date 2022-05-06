@@ -6,8 +6,10 @@ namespace MyAnimeMVC.AnimeMVC.Models.Rating
     {
         [Display(Name = "Anime")]
         public string AnimeTitle { get; set; }
+
         [Display(Name = "YearCreated")]
         public string YearCreated { get; set; }
+
         [Display(Name = "Rating")]
         public double Score { get; set; }
     }

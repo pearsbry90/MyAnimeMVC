@@ -7,7 +7,7 @@ namespace MyAnimeMVC.AnimeMVC.Models.Genre
     {
         [Required]
         [Display(Name = "Anime")]
-        public int AnimeTitle { get; set; }
+        public int AnimeId { get; set; }
 
         [Required]
         [Display(Name = "YearCreated")]

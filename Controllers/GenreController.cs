@@ -22,15 +22,15 @@ namespace MyAnimeMVC.AnimeMVC.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            IEnumerable<GenreListItem> ratings = await _context.Genres
+            IEnumerable<GenreListItem> genres = await _context.Genres
             .Select(r => new GenreListItem()
             {
-                AnimeId = r.Anime.Title,
+                AnimeTitle = r.Anime.Title,
                 YearCreated = r.YearCreated,
                 Name = r.Name,
             }).ToListAsync();
 
-            return View(ratings);
+            return View(genres);
         }
 
         [HttpGet]
@@ -40,7 +40,7 @@ namespace MyAnimeMVC.AnimeMVC.Controllers
             .Where(r => r.AnimeId == id)
             .Select(r => new GenreListItem()
             {
-                AnimeId = r.Anime.Title,
+                AnimeTitle = r.Anime.Title,
                 YearCreated = r.YearCreated,
                 Name = r.Name,
             }).ToListAsync();
@@ -75,7 +75,7 @@ namespace MyAnimeMVC.AnimeMVC.Controllers
 
             Genre genre = new Genre()
             {
-                AnimeId = model.AnimeTitle,
+                AnimeId = model.AnimeId,
                 YearCreated = model.YearCreated,
                 Name = model.Name,
             };
